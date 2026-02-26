@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داخلہ فارم - دارالسنہ</title>
+    <style>
+        @font-face { font-family: 'Jameel Noori Nastaleeq'; src: url('https://cdn.jsdelivr.net/gh/naqashsp/Jameel-Noori-Nastaleeq-Web-Font@master/JameelNooriNastaleeq.woff2') format('woff2'); }
+        body { font-family: 'Jameel Noori Nastaleeq'; background: #f4f7f6; padding: 20px; line-height: 2; }
+        .form-container { max-width: 500px; margin: 0 auto; background: white; padding: 25px; border-radius: 15px; border-top: 6px solid #00695c; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #00695c; }
+        input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-family: 'Jameel Noori Nastaleeq'; box-sizing: border-box; }
+        .btn { background: #00695c; color: white; border: none; width: 100%; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-family: 'Jameel Noori Nastaleeq'; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>آن لائن داخلہ فارم</h2>
+        <form id="admissionForm">
+            <input type="text" placeholder="طالب علم کا نام" required>
+            <input type="text" placeholder="والد کا نام" required>
+            <input type="rext" placeholder="مکمل پتہ "required>
+            <input type="date" placeholder="تاریخ پیدائش" required>
+            <select required>
+                <option value="">درجہ منتخب کریں</option>
+                <option>حفظ</option><option>ناظرہ</option><option>کتب</option>
+            </select>
+            <input type="number" placeholder="واٹس ایپ نمبر" required>
+            <textarea placeholder="پچھلا مدرسہ / تعلیم" rows="3"></textarea>
+            <button type="submit" class="btn">درخواست جمع کریں</button>
+        </form>
+        <p style="text-align:center;"><a href="index.html" style="color:#666; text-decoration:none;">← واپس ہوم پیج</a></p>
+    </div>
+</body>
+</html>
+
