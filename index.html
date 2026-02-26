@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسہ دارالسنہ - مرکزی صفحہ</title>
+    
+    <!-- فونٹس -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+    @font-face {
+    font-family: 'Jameel Noori Nastaleeq';
+    src: url('https://cdn.jsdelivr.net/gh/naqashsp/Jameel-Noori-Nastaleeq-Web-Font@master/JameelNooriNastaleeq.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/naqashsp/Jameel-Noori-Nastaleeq-Web-Font@master/JameelNooriNastaleeq.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+        /* بنیادی سیٹنگز */
+        :root {
+            --primary: #00695c;
+            --secondary: #004d40;
+            --accent: #ffb74d;
+            --light: #f0f2f5;
+            --dark: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Jameel Noori Nastaleeq', Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 2;
+        }
+
+        /* ہیڈر / مینیو */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            background: white;
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+        }
+
+        .madrasa-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1;
+        }
+
+        /* تازہ ترین خبریں (Ticker) */
+        .news-ticker {
+            background-color: var(--accent);
+            color: var(--secondary);
+            padding: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-text {
+            display: inline-block;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ہیرو سیکشن (مرکزی تصویر) */
+        .hero {
+            background: linear-gradient(rgba(0,105,92,0.8), rgba(0,77,64,0.9)), url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            line-height: 1.8;
+        }
+
+        /* مرکزی بٹن (Grid Menu) */
+        .main-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 0 20px 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: var(--dark);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 4px solid var(--primary);
+            display: block; /* لنک کو پورا کارڈ بناتا ہے */
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-bottom-color: var(--accent);
+        }
+
+        .menu-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .menu-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .menu-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* فوٹر */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer-info {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        /* موبائل کے لیے ایڈجسٹمنٹ */
+        @media (max-width: 600px) {
+            .madrasa-name { font-size: 1.4rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .main-menu { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .menu-icon { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ہیڈر -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">🕋</div>
+            <h1 class="madrasa-name">مدرسہ دارالسنہ</h1>
+        </div>
+        <!-- یہاں بعد میں ہیمبرگر مینو (تین لائنیں) لگا سکتے ہیں -->
+    </header>
+
+    <!-- چلتی ہوئی خبر -->
+    <div class="news-ticker">
+        <div class="ticker-text">
+            🌟 اعلان: نئے تعلیمی سال کے لیے داخلے جاری ہیں۔ قربانی کے حصوں کی بکنگ شروع ہو چکی ہے۔ مزید معلومات کے لیے دفتر سے رابطہ کریں۔
+        </div>
+    </div>
+
+    <!-- ہیرو سیکشن -->
+    <section class="hero">
+        <h1>خوش آمدید</h1>
+        <p>سی بلاک، ملت ٹاؤن، فیصل آباد کی عظیم دینی درسگاہ، جہاں قرآن و سنت کی تعلیم کا بہترین انتظام موجود ہے۔</p>
+    </section>
+
+    <!-- مین مینو (شعبہ جات) -->
+    <main class="main-menu">
+        
+        <!-- 1. قربانی کا بٹن (یہ آپ کے پرانے فارم پر جائے گا) -->
+        <a href="booking.html" class="menu-card">
+            <div class="menu-icon"><i class="fas fa-cow"></i></div>
+            <div class="menu-title">شعبہ قربانی</div>
+            <div class="menu-desc">اجتماعی قربانی میں حصہ بک کروائیں</div>
+        </a>
+
+        <!-- 2. داخلہ کا بٹن -->
+        <a href="#" onclick="alert('یہ صفحہ ابھی بن رہا ہے۔')" class="menu-card">
+            <div class="menu-icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="menu-title">آن لائن داخلہ</div>
+            <div class="menu-desc">بنین و بنات (حفظ، ناظرہ، کتب)</div>
+        </a>
+
+        <!-- 3. میڈیا گیلری -->
+        <a href="#" onclick="alert('یہ صفحہ ابھی بن رہا ہے۔')" class="menu-card">
+            <div class="menu-icon"><i class="fas fa-video"></i></div>
+            <div class="menu-title">میڈیا و بیانات</div>
+            <div class="menu-desc">ویڈیوز، دستار بندی اور تقاریب</div>
+        </a>
+
+        <!-- 4. تعارف -->
+        <a href="#" onclick="alert('یہ صفحہ ابھی بن رہا ہے۔')" class="menu-card">
+            <div class="menu-icon"><i class="fas fa-mosque"></i></div>
+            <div class="menu-title">تعارف مدرسہ</div>
+            <div class="menu-desc">ہمارے بارے میں جانیے</div>
+        </a>
+
+        <!-- 5. رابطہ -->
+        <a href="#" onclick="alert('یہ صفحہ ابھی بن رہا ہے۔')" class="menu-card">
+            <div class="menu-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="menu-title">رابطہ کریں</div>
+            <div class="menu-desc">پتہ اور فون نمبرات</div>
+        </a>
+
+        <!-- 6. عطیات (Donations) -->
+        <a href="#" onclick="alert('یہ صفحہ ابھی بن رہا ہے۔')" class="menu-card">
+            <div class="menu-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="menu-title">تعاون کریں</div>
+            <div class="menu-desc">مدرسہ کے اخراجات میں حصہ ڈالیں</div>
+        </a>
+
+    </main>
+
+    <!-- فوٹر -->
+    <footer>
+        <h3 style="margin: 0 0 10px 0; color: var(--accent);">مدرسہ دارالسنہ</h3>
+        <p class="footer-info">سی بلاک، ملت ٹاؤن، فیصل آباد</p>
+        <p class="footer-info" style="font-size: 0.8rem;">© 2026 جملہ حقوق محفوظ ہیں۔</p>
+    </footer>
+
+</body>
+</html>
+
+              
